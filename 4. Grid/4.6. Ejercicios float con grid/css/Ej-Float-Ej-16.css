@@ -1,0 +1,50 @@
+/* To Do List */
+.todo-list {
+  width: 700px;
+  margin: 0 auto;
+  border: 1px solid black;
+  background-color: white;
+}
+
+div{
+  padding:5px;
+}
+
+.todo{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto auto 1fr;
+
+}
+
+
+.check{
+  justify-self: end;
+}
+
+/* Priority icon dot */
+.icon {
+}
+
+/* Info of the todo, title and date */
+.todo-info {
+}
+
+/* Title */
+.todo-title {
+  font-size: 24pt;
+}
+
+/* Date */
+.todo-date {
+  font-size: 12pt;
+}
+
+/* Checkboxes */
+.checkbox-right {
+  margin: 35px 35px 0 0;
+}
+
+p {
+  line-height: 150%;
+}
