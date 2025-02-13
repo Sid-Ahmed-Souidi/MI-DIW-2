@@ -1,0 +1,119 @@
+:root {
+    --header-bg-clr: #F2DD6E;
+    --header-clr: #000;
+    --nav-bg-clr: #523A34;
+    --nav-clr: #fff;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  :is(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+  
+  /****************************/
+  /********** HEADER **********/
+  /****************************/
+  header {
+    display: grid;
+    background-color: var(--header-bg-clr);
+    color: var(--header-clr);
+  }
+  
+
+  
+header .curso,
+header .modulo {
+  background-color: #E5B25D;
+  color: #000;
+  font-size: 1em;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.nav-container {
+  background-color: var(--nav-bg-clr);
+}
+
+
+
+
+nav a {
+  font-size: 1.125em;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--nav-clr);
+  text-align: center;
+  width: 100%;
+}
+
+nav a:hover {
+  background-color: var(--nav-clr);
+  color: var(--nav-bg-clr);
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+main {
+  display: grid;
+  padding: 20px;
+}
+
+main>div:nth-child(1) {
+  background-color: lightcoral;
+}
+
+main>div:nth-child(2) {
+  background-color: lightgreen;
+}
+
+main>div:nth-child(3) {
+  background-color: lightblue;
+}
+
+main>div:nth-child(4) {
+  background-color: lightgray;
+}
+
+main>div:nth-child(5) {
+  background-color: lightsalmon;
+}
+
+main>div:nth-child(6) {
+  background-color: lightyellow;
+}
+
+
+header{
+  display: grid;
+  grid-template-areas:
+  "curso curso modulo modulo"
+  ". h1 h1 ." ;
+
+}
+
+header h1 {
+   grid-area: h1;
+}
+
+header .curso {
+  grid-area: curso;
+}
+
+
+header .modulo {
+  grid-area: modulo;
+}

@@ -1,0 +1,279 @@
+main {
+  padding: 2rem;
+}
+
+/** 
+  * !! Para que los elementos del nav se situen en los extremos estableciendo un espacio 
+  */ 
+  nav {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+  
+  /** 
+    * !! Para el contenedor del logo establecemos grid para que el flujo sea de tipo columna 
+    *  !! , para que esten centrados linealmente align-items: center y espacio entre ellos con column-galp
+    */
+  .logo-container{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 10px;
+  }
+  
+  /** 
+    * 
+    * !!  Aqui igual que en el contenedor de logo flujo de tipo columna 
+    * !!  y para que esten centrados linealmente align-items: center
+    */
+  header ul{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+  }
+  
+  /** 
+    * 
+    * 
+    * !! establecemos para que el flujo del sidebar este en modo fila
+    
+    */
+.sidebar ul {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+
+  /** 
+    * !! Establecemos que las cartas cuando sean menor de 600 se vean una de bajo de otra 
+    * !! y que ocupen el 100% de la anchura 
+    */
+.ofertas-grid{
+  row-gap: 20px;
+  display: grid;
+  grid-template-areas:
+      "card1"
+      "card2"
+      "card3 " ;
+  }
+  .ofertas-grid .oferta-card:nth-child(1) {
+    grid-area: card1;
+  }
+  .ofertas-grid .oferta-card:nth-child(2) {
+    grid-area: card2;
+  }
+    .ofertas-grid .oferta-card:nth-child(3) {
+    grid-area: card3;
+  }
+
+  
+    /** 
+    * !! Establecemos que las cartas cuando sean menor de 600 se vean una de bajo de otra 
+    * !! y que ocupen el 100% de la anchura 
+    */
+.footer-grid{
+  row-gap: 20px;
+    display: grid;
+    grid-template-areas:
+      "section1"
+      "section2"
+      "section3" ;
+  }
+  .footer-grid .footer-section:nth-child(1) {
+    grid-area: section1;
+  }
+  .footer-grid .footer-section:nth-child(2) {
+    grid-area: section2;
+  }
+    .footer-grid .footer-section:nth-child(3) {
+    grid-area: section3;
+  }
+
+/**
+  !!! los elementos de las secciones del footer se cambia a filas para que los elementos 
+  li se vean uno debajo de otro 
+*/
+
+.footer-section ul {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+/** 
+  * 
+  En el contenedor ofertas-grid establecemos de tipo columna para que se alinee  
+  y column-gap: 15px; para que haya un espacio entre las cartas
+  */
+
+.ofertas-grid{
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 15px;
+}
+
+
+/** 
+  * 
+  Establecemos que en las dos primeras filas de la imagen y del titulo de la carta sean auto para 
+  que no se estiren ya que ponemos un 1fr para la fila del parafo para que en el caso de introducir mas 
+  texto aumente dicho texto y el boton de ver detalles auto para que se mantenga abajo siempre 
+  */
+ .oferta-card{
+  display: grid;
+  row-gap: 20px;
+  grid-template-rows: auto auto  1fr auto;
+
+} 
+
+
+
+
+
+
+@media (min-width: 600px) {
+  /* Reorganizamos la estructura del grid principal en una sola columna */
+  .grid-index-container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+     
+  }
+
+  /* La barra lateral ocupa el espacio disponible como una fila completa */
+  .sidebar {
+    grid-area: sidebar;
+  } 
+/* */
+header{
+  grid-area: header;
+}
+  /* Mantenemos el contenido principal en su área y simplificamos su layout */
+main {
+    grid-area: main;
+  }
+
+  /* Ajustamos el footer para mantener su posición en una única fila */
+footer {
+    grid-area: footer;
+  }
+
+
+.ofertas-grid{
+row-gap: 20px;
+  display: grid;
+  grid-template-areas:
+    "card1 card1 card2 card2"
+    ". card3 card3 ."; 
+
+}
+
+/** 
+  * 
+ * !!Hago que las tres secciones que hay en el footer se establezcan en la misma linea definiendolas con areas 
+ * !! para que establezca un espacio entre ellas usando el space-around 
+  */
+  .footer-grid{
+    row-gap: 20px;
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas:
+    "section1 section2 section3"; 
+  
+  }
+  
+  
+
+
+}
+
+
+
+@media (min-width: 1000px) {
+
+ 
+
+
+.grid-index-container {
+  display: grid;
+  grid-template-areas: 
+  'header header' 
+  'main sidebar' 
+  'footer footer'; 
+  grid-template-columns: auto 250px;
+  
+
+}
+
+
+.ofertas-grid{
+  row-gap: 20px;
+    display: grid;
+    grid-template-areas:
+      "card1 card2 card3";
+
+  }
+
+
+.sidebar ul {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+
+
+}
+
+
+
+/* Panel de bienvenida */
+.welcome {
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: var(--color-dark);
+}
+
+.welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Panel Ofertas Especiales
+.ofertas-grid {
+} */
+
+.ofertas h2 {
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--color-light);
+  padding: 2rem;
+  color: var(--color-dark);
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+section.ofertas {
+  margin-top: 2rem;
+}
+
+

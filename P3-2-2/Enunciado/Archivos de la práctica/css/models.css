@@ -1,0 +1,343 @@
+/** 
+  * !! Para que los elementos del nav se situen en los extremos estableciendo un espacio uso lo siguiente 
+  */
+nav {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+/** 
+    * !! Para el contenedor del logo establecemos grid para que el flujo sea de tipo columna 
+    *  !! , para que esten centrados linealmente align-items: center y espacio entre ellos con column-galp
+  
+    */
+.logo-container {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  column-gap: 10px;
+}
+
+/** 
+    * !!Establecemos un espacio de filas de 20 px entre los elementos del formulario 
+    */
+.filter-sidebar form {
+  display: grid;
+  row-gap: 20px;
+}
+
+
+/* en el boton establecemos que ocupe 2 columnas para que se vea mas grande y centrado */
+
+/* grid-column: span 2;
+  justify-self: center; */
+
+
+/** 
+    * 
+    * !!  Aqui igual que en el contenedor de logo flujo de tipo columna 
+    * !!  y para que esten centrados linealmente align-items: center
+  
+    */
+header ul {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+
+/** 
+    * !! Establecemos que las cartas cuando sean menor de 600 se vean una de bajo de otra 
+    * !! y que ocupen el 100% de la anchura 
+    */
+.footer-grid {
+  row-gap: 20px;
+  display: grid;
+  grid-template-areas:
+    "section1"
+    "section2"
+    "section3";
+}
+
+.footer-grid .footer-section:nth-child(1) {
+  grid-area: section1;
+}
+
+.footer-grid .footer-section:nth-child(2) {
+  grid-area: section2;
+}
+
+.footer-grid .footer-section:nth-child(3) {
+  grid-area: section3;
+}
+
+
+
+/**
+  * !!! los elementos de las secciones del footer se cambia a filas para que los elementos 
+    * !! li se vean uno debajo de otro 
+*/
+
+.footer-section ul {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+
+/** 
+    * !! Establecemos espacio de filas entre las cartas en menos de 600px   
+    */
+
+.models-grid {
+  display: grid;
+  row-gap: 20px;
+}
+
+/** 
+  * 
+  * !! Establecemos que en las dos primeras filas de la imagen y del titulo de la carta sean auto para 
+  * !! que no se estiren ya que ponemos un 1fr para la fila del parafo para que en el caso de introducir mas 
+  * !! texto aumente dicho texto y el boton de ver detalles auto para que se mantenga abajo siempre 
+  */
+.model-card {
+  display: grid;
+  row-gap: 20px;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+
+
+/** 
+    * !!Contenido que se aplica con mas de 600px 
+    */
+@media (min-width: 600px) {
+
+  /** 
+    * !!Defino que el header , aside , main y el footer ocupen el 100% de la anchura  con el orden indicado 
+    */
+  .grid-models-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'aside'
+      'main'
+      'footer';
+
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  /** 
+    * !! Establecemos que en este caso el label del consumo(l|100km) establezca el tamaño del contenido
+    *  !! ya que es el que tiene mas tamaño de los labels y  los inputs ocupan el resto del espacio .
+    * !! Ponemos un espacio entre los labels y los inputs
+    */
+  form {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: max-content auto;
+  }
+
+
+
+   /** 
+    * !! El botton hacemos que ocupe las dos columnas que hay en el formulario
+    * !!  y ahi es cuando podemos centrarlo  en el medio 
+    */
+  .filter-sidebar button {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .models-grid {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  }
+
+  .models-grid .oferta-card:nth-child(1) {
+    grid-area: card1;
+  }
+
+  .models-grid .oferta-card:nth-child(2) {
+    grid-area: card2;
+  }
+
+  .models-grid .oferta-card:nth-child(3) {
+    grid-area: card3;
+  }
+
+  .models-grid .oferta-card:nth-child(4) {
+    grid-area: card3;
+  }
+
+  .models-grid .oferta-card:nth-child(5) {
+    grid-area: card5;
+  }
+
+  .models-grid .oferta-card:nth-child(6) {
+    grid-area: card6;
+  }
+
+  .models-grid .oferta-card:nth-child(7) {
+    grid-area: card7;
+  }
+
+  .models-grid .oferta-card:nth-child(8) {
+    grid-area: card8;
+
+  }
+
+  /** 
+     * !!Hago que las tres secciones que hay en el footer se establezcan en la misma linea definiendolas con areas 
+    * !! para que establezca un espacio entre ellas usando el space-around 
+      */
+  .footer-grid {
+    row-gap: 20px;
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas:
+      "section1 section2 section3";
+  }
+
+
+}
+
+
+
+@media (min-width: 1000px) {
+
+
+  .grid-models-container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'header header header header'
+      'aside main main main'
+      'footer footer footer footer';
+    grid-template-columns: 300px auto;
+    /* Aside entre 200px y 300px */
+  }
+
+
+  .models-grid {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+
+
+  /** 
+   * !!Establezco que en el formulario haya un espacio de filas entre los elementos que contiene
+   * !! Luego selecciono todos los elementos que hay en el formulario y hago que se estiren hasta el final 
+   * !! Ocupando toda la anchura  
+      */
+  .filter-sidebar form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+
+  .filter-sidebar label,
+  .filter-sidebar input,
+  .filter-sidebar select {
+    grid-column: 1 / 3;
+  }
+
+  .filter-sidebar button {
+    justify-self: start;
+
+  }
+}
+
+
+
+
+/**
+    * !! los elementos de las secciones del footer se cambia a filas para que los elementos 
+    * !! li se vean uno debajo de otro 
+  */
+
+.footer-section ul {
+  display: grid;
+  grid-auto-flow: row;
+
+}
+
+
+
+
+.filter-sidebar {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  color: var(--color-dark);
+}
+
+.filter-sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.filter-sidebar form label {
+  font-weight: bold;
+}
+
+.filter-sidebar form input,
+.filter-sidebar form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-medium);
+  border-radius: 5px;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.filter-sidebar button {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-sidebar button:hover {
+  background-color: var(--color-medium);
+}
+
+.models-grid {
+  padding: 2rem;
+}
+
+.config-button {
+  display: inline-block;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.config-button:hover {
+  background-color: var(--color-medium);
+}

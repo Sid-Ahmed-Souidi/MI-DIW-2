@@ -1,0 +1,91 @@
+:root {
+    --titulo-color: gray; /* Azul principal */
+  }
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+header {
+    position: relative;
+}
+
+header .titulo{
+    background-color: var(--titulo-color);
+    padding: 15px;
+}
+
+header h1{
+    color: white;
+    text-align: center;
+}
+
+
+
+header img{
+width: 100%;
+vertical-align: middle;
+margin: 0;
+}
+
+
+
+.card {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+
+.card .smiley{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10px;
+    vertical-align: middle;
+}
+
+.card p{
+    padding: 20px;
+}
+
+
+
+.bg-clr-lightblue {
+    background-color: lightseagreen;
+  }
+  
+.bg-clr-lightcoral {
+    background-color: lightcoral;
+  }
+  
+.bg-clr-lightcyan {
+    background-color: lightblue;
+  }
+  
+
+.bg-clr-lightgoldenrodyellow {
+    background-color: yellowgreen;
+  }
+
+
+.card h3{
+    border-radius: 1px solid black;
+
+
+}
+
+.card img{
+    width: 100%;
+}
+
+
+.card h3{
+border-bottom: 1px solid black; 
+
+
+}

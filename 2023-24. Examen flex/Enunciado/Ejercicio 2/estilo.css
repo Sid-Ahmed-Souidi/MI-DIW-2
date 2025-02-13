@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+
+.container {
+    border: 1px solid black;
+    background-color: yellow;
+    padding: 20px;
+
+}
+
+.zona-izquierda , .zona-derecha {
+    border: 1px solid black;
+
+
+}
+
+.fila-1{
+    display: flex;
+
+}
+
+
+.container p {
+    margin: 0 0 0.5em 0;
+  }
+  
+

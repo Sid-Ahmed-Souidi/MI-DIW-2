@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<style>
+
+.grid-container{
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+  
+    grid-template-areas: 
+      "uno tres . ." 
+      ".  dos dos dos" 
+      "cuatro cuatro cuatro cuatro"
+      "cinco cinco cinco cinco"
+      "seis seis seis seis"; 
+
+      margin: 0 auto;
+    max-width:800px;
+    height: 400px;
+    padding: 10px;
+
+}
+.grid-item{
+    background-color: blue;
+    text-align: center;
+    margin: 4px;
+    border-radius: 7px;
+}
+
+.grid-item-1{
+    grid-area: uno; 
+}
+.grid-item-2{
+    grid-area: dos; 
+}
+.grid-item-3{
+    grid-area: tres; 
+}
+.grid-item-4{
+    grid-area: cuatro; 
+}
+.grid-item-5{
+    grid-area: cinco; 
+}
+.grid-item-6{
+    grid-area: seis; 
+}
+
+@media (min-width: 600px) {
+
+    .grid-container{
+        grid-template-rows: 1fr 1fr auto 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 0 auto;
+        max-width:800px;
+        display: grid; 
+        grid-template-areas: 
+          "uno uno uno uno" 
+          "dos dos tres tres" 
+          "dos dos cinco cinco"
+          ". . cuatro cuatro"
+          "seis seis seis seis"
+    }
+
+}
+
+</style>
+
+
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item grid-item-1">1</div>
+        <div class="grid-item grid-item-2">2</div>
+        <div class="grid-item grid-item-3">3</div>
+        <div class="grid-item grid-item-4">4</div>
+        <div class="grid-item grid-item-5">5</div>
+        <div class="grid-item grid-item-6">6</div>
+      </div>
+    
+</body>
+</html>

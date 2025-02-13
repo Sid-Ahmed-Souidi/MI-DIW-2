@@ -1,0 +1,113 @@
+
+
+.container{
+    display: grid;
+    border:1px solid black;
+    background-color: gray;
+    max-width: 800px;
+    margin: 0 auto;
+    grid-template-areas: 
+      "MC MC MR MR Mmas Mmas Mmenos Mmenos MS MS M M" 
+      "porcentaje porcentaje porcentaje  CE CE CE C C C flecha flecha flecha" 
+      "unoBarra unoBarra unoBarra x2 x2 x2 z2 z2 z2 barra barra barra"; 
+}
+
+/* <div class="container">
+    <div class="operador MC">MC</div>
+    <div class="operador MR">MR</div>
+    <div class="operador Mmas">M+</div>
+    <div class="operador Mmenos">M-</div>
+    <div class="operador MS">MS</div>
+    <div class="operador M">M</div>
+    <div class="operador porcentaje">%</div>
+    <div class="operador CE">CE</div>
+    <div class="operador C">C</div>
+    <div class="operador flecha">>=</div>
+    <div class="operador unoBarra">1/X</div>
+    <div class="operador x2">x2</div>
+    <div class="operador z2">z2</div>
+    <div class="operador barra">/</div>
+</div> */
+
+
+.MC{
+    grid-area: MC;
+}
+.Mmas{
+    grid-area: Mmas;
+}
+.MR{
+    grid-area: MR;
+}
+.Mmenos{
+    grid-area: Mmenos;
+}
+
+.MS{
+    grid-area: MS;
+}
+
+.M{
+    grid-area: M;
+}
+.porcentaje{
+    grid-area: porcentaje;
+}
+.CE{
+    grid-area: CE;
+}
+
+.C{
+    grid-area: C;
+}
+
+.flecha{
+    grid-area: flecha;
+}
+
+.unoBarra{
+    grid-area: unoBarra;
+}
+
+
+.x2{
+    grid-area: x2;
+
+}
+
+.z2{
+    grid-area: z2;
+
+}
+
+.barra{
+    grid-area: barra;
+
+}
+
+
+/* 
+.fila6  {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+
+.fila4  {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+} */
+
+
+.operador{
+    border: 1px solid black  ;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: beige;
+
+
+}
+
+

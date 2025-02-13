@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="hover-button">Enviar</button>
+<style>
+.hover-button {
+padding: 0.5em 1em;
+background-color: black;
+color: white;
+border: 2px solid black;
+cursor: pointer;
+font-size: 4rem;
+
+}
+
+.hover-button:hover {
+
+    animation: buttonHover 2s forwards;
+
+
+}
+
+
+
+
+@keyframes buttonHover {
+10% {
+
+    font-size: 6rem;
+    background-color:black ;
+    color: white;
+}
+10% {
+
+    font-size: 6rem;
+    background-color:white ;
+    color: black;
+
+}
+100% {
+    font-size: 6rem;
+    background-color:black ;
+    color: white;
+}
+
+}
+
+</style>
+    
+</body>
+</html>

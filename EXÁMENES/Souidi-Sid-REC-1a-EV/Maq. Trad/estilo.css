@@ -1,0 +1,76 @@
+:root {
+    --header-bg: black;
+    --header-color: white;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+
+
+  /* header a.login:hover {
+    color: var(--header-bg);
+    background-color: var(--header-color);
+  }
+ */
+
+
+.container{
+    border-top: 1px solid black;
+    margin-top: 20px;
+}
+
+ .imagen{
+    background-color: grey;
+ }
+
+ .img{
+    width: 100%;
+}
+
+.verde{
+    background-color: green;
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+    
+}
+
+.nombre-homer{
+    background-color: black;
+    position: absolute;
+    height: 20px;
+    bottom: 30px;
+    color: white;
+
+}
+
+.parrafo1{
+width:65%;
+overflow: hidden;
+
+}
+.homerImg{
+    width: 20%;
+    height: 150px;
+    margin: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+}
+
+
+.f-left{
+    float: left;
+}
+
+.f-right{
+    float: right;
+}
+
+
+
+
+

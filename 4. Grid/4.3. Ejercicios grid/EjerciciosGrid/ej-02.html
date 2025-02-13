@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios grid2</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    .div1 {
+      padding: 50px;
+      background-color: pink;
+    }
+
+    .div2 {
+      padding: 50px;
+      background-color: aqua;
+    }
+
+    .div3 {
+      padding: 50px;
+      background-color: coral;
+    }
+
+
+
+
+    .container {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: space-between;
+      grid-template-columns: auto auto 1fr 1fr auto;
+
+    }
+
+
+    /* .container2 {
+      display: grid;
+      grid-auto-flow: column;
+    } */
+    .div1 {
+      /* establecemos que el div este en la primera fila */
+      grid-row-start: 1;
+      grid-column-start: 5;
+       grid-column-end: 5;
+
+
+    }
+
+    .div2 {
+            /* establecemos que el div este en la primera fila */
+      grid-row-start: 1;
+      
+       grid-column-start: 1;
+       grid-column-end: 2;
+
+
+   
+
+
+    }
+
+    .div3 {
+            /* establecemos que el div este en la primera fila */
+      grid-row-start: 1;
+      grid-column-start: 2;
+       grid-column-end: 3;
+
+
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+      <div class="div1">Div1</div>
+        <div class="div2">Div2</div>
+        <div class="div3">Div3</div>
+  </div>
+
+  <p>Soy un párrafo añadido justo después para ilustrar por qué es necesaria la clase <code>clearfix</code>.</p>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>En este caso, exactamente igual que en el anterior, es necesario crear un contenedor para los elementos flotantes y añadir la clase <code>clearfix</code> a ese contenedor.</p>
+  </div>
+
+</body>
+
+</html>

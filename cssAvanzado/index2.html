@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>La solución para conseguir una alternancia de colores indefinida es crear dos animaciones encadenadas. No se puede crear este efecto en una sola animación porque entonces se animaría el tamaño de fuente también indefinidamente.</p>
+    <hr>
+    <button class="hover-button">Enviar</button>
+    <style>
+.hover-button {
+padding: 0.5em 1em;
+background-color: black;
+color: white;
+border: 2px solid black;
+cursor: pointer;
+font-size: 6rem;
+
+}
+
+.hover-button:hover {
+
+    animation: buttonHover 2 forwards,otraAnimacion  2s forwards infinite;
+
+
+}
+
+
+
+
+
+
+@keyframes otraAnimacion {
+    
+10% {
+
+    font-size: 6rem;
+    background-color:black ;
+    color: white;
+}
+50% {
+
+    font-size: 6rem;
+    background-color:white ;
+    color: black;
+
+}
+100% {
+    font-size: 6rem;
+    background-color:black ;
+    color: white;
+}
+
+}
+
+
+
+
+
+@keyframes buttonHover {
+10% {
+
+    font-size: 6rem;
+    background-color:black ;
+    color: white;
+}
+10% {
+
+    font-size: 6rem;
+    background-color:white ;
+    color: black;
+
+}
+100% {
+    font-size: 6rem;
+    background-color:black ;
+    color: white;
+}
+
+}
+
+</style>
+    
+</body>
+</html>

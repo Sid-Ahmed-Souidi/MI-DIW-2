@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+
+    <textarea id="texto"></textarea>
+    <div class="contador">Caracteres: <span id="contador">0</span></div>
+
+    <script>
+
+            $('#texto').on('input',function() {
+                let caracteres = $(this).val().length;
+                $('#contador').text(caracteres);
+
+            });
+
+
+ 
+// <p><p>Hello</p></p>
+ 
+//  var p = $( "p" ).first(); 
+//    $( "p" ).last().text( "scrollLeft:" + p.scrollLeft() );
+
+
+</script>
+
+</body>
+</html>

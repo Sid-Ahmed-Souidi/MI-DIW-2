@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+
+
+</head>
+<body>
+
+    <form id="login-form"> 
+        <input type="text" name="username" id="username" placeholder="Nombre de Usuario" value="kjhaisdhf">
+        <input type="password" name="password" id="password" 
+      placeholder="Contraseña"> 
+        <input type="submit" id="submit-btn" value="Iniciar Sesión"> 
+        <div id="alert"></div> 
+      </form>
+
+      <script>
+
+        if ($('#username').val()==='' ||$('#password').val()==='') {
+            alert("los campos username o el password");
+            
+        }
+
+
+
+      </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+.div1 {
+    float: left;
+    background-color: cyan;
+    padding: 100px;
+
+    
+
+
+}
+
+
+
+.div2 {
+    float: right;
+    padding: 100px;
+
+    background-color: pink;
+
+
+
+}
+
+.clearfix{
+    display: table;
+    content: "";
+    clear: both;
+}
+
+

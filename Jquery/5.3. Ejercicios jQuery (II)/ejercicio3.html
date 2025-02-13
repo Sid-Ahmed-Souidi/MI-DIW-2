@@ -1,0 +1,42 @@
+<!-- 3. Crea  el  código  jQuery  que  ponga  la  clase  “sinalt”  a  todas  las 
+imágenes que no tengan el atributo “alt” o lo tengan vacío.  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="../jquery-3.7.1.min.js"></script>
+    
+    </head>
+            
+        <body> 
+
+            <img  class="img" src="img-ej-11.jpg" alt="">
+            <img  class="img" src="img-ej-11.jpg" alt="">
+            <img  class="img" src="img-ej-11.jpg">
+
+
+            <script>
+                $(document).ready(function() {
+                    if($('img').each(function(){
+                        if(($(this).attr("alt"))!==undefined){
+                            console.log("Contiene el atributo alt");
+
+
+                        }else{
+                            console.log("No contiene el atributo alt");
+                            $(this).addClass("sinalt")
+                        }
+                    }));
+
+                });
+
+                
+            </script>
+
+
+    </body>
+    </html>

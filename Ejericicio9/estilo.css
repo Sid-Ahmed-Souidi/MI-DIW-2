@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+nav {
+    width: 100%;
+    background-color: grey;
+    overflow: hidden;
+    padding: 20px;
+    color: white;
+}
+
+.izquierda > a {
+    margin-right: 30px;
+    
+}
+a:hover{
+    background-color: red;
+}
+
+
+.izquierda{
+    float: left;
+}
+.derecha{
+    float: right;
+}

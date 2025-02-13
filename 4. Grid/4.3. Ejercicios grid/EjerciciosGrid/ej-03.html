@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 3</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+
+    .container {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+    }
+    .texto {
+      background-color: coral;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-start: 2;
+
+    }
+
+
+    .div1 {
+      display: grid;
+      padding: 50px;
+      background-color: pink;
+      grid-column-start: 3;
+       grid-column-end: 3;
+       grid-row-start: 1;
+       grid-column-end: 3;
+    }
+
+    .div2 {
+      padding: 5px;
+      background-color: aqua;
+      grid-row-start: 2;
+
+    }
+
+  
+    .div3 {
+      padding: 5px;
+      background-color: aqua;
+      grid-row-start: 1;
+      grid-row-start: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+  <div class="div1">Div1</div>
+
+  <div class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsum possimus eius cum a hic excepturi molestias. Neque saepe fugit, placeat dolor autem porro voluptatibus numquam iste reprehenderit molestias ea.</div>
+
+  <div class="div2">Div2</div>
+
+  </div>
+</body>
+
+</html>

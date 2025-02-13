@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+header ,footer{
+    padding: 60px 0;
+    background-color: grey;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.contenedor{
+    float: left;
+    margin-right: 50px;
+
+}
+.contenedor > div {
+    padding: 1px;
+    background-color: cyan;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+
+

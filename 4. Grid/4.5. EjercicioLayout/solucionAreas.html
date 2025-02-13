@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<style>
+
+    .num{
+            display: grid;
+            background-color: blue;
+    }
+    .container{
+        gap: 5px;
+    margin: 0 auto;
+    max-width:700px;
+
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(auto, 1fr));
+        grid-template-rows: 1fr 1fr 1fr auto auto;
+        grid-template-areas: 
+        "uno tres . ."
+        ". dos dos dos"
+        "cuatro cuatro cuatro cuatro"
+        "cinco cinco cinco cinco"
+        "seis seis seis seis"
+        ;
+    }
+
+
+    .uno{
+        grid-area: uno;
+    }
+
+    .dos{
+        grid-area: dos;
+    }
+    .tres{
+        grid-area: tres;
+    }
+    .cuatro{
+        grid-area: cuatro;
+    }
+    .cinco{
+        grid-area: cinco;
+    }
+    .seis{
+        grid-area: seis;
+    }
+    
+
+    @media (min-width: 600px) {
+        .container{
+          gap: 5px;
+         margin: 0 auto;
+       max-width:700px;
+
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(auto, 1fr));
+        grid-template-rows: 1fr 1fr auto 1fr 2fr;
+        grid-template-areas: 
+        "uno uno uno uno"
+        "dos dos tres tres"
+        "dos dos cinco cinco"
+        ". . cuatro cuatro"
+        "seis seis seis seis"
+        ;
+    }
+
+        
+    }
+
+
+
+
+</style>
+
+
+<body>
+<div class="container">
+    <div class="num uno">1</div>
+    <div class="num dos">2</div>
+    <div class="num tres">3</div>
+    <div class="num cuatro">4</div>
+    <div class="num cinco">5</div>
+    <div class="num seis">6</div>
+</div>
+
+
+
+</body>
+</html>
