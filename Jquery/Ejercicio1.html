@@ -14,11 +14,16 @@
     caracteres. Cuando el usuario escriba en el textarea se actualizará un contador 
     del  número  de  caracteres  que  tiene  el  textarea.  Ese  contador  se  mostrará  al 
     usuario justo debajo del textarea.  -->
-
-
+    
+    <!-- input → Detecta cualquier cambio en el campo, incluyendo copiar/pegar con el mouse.
+    keyup → Se dispara después de que la tecla es liberada, por lo que el val() ya está actualizado.
+     -->
     <script>
+        // keydown se ejecuta antes de que el carácter 
+        // aparezca en el campo de texto. Es decir, cuando se presiona una tecla
+        //  pero antes de que el valor del campo se actualice.
             $(document).ready(function () {
-                $("#textbox").on("keydown", function () {
+                $("#textbox").on("input", function () {
                     var longitud = $("#textbox").val().length;
                     console.log("longitud :"+longitud)
                 });
