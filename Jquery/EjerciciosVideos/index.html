@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    
+<style>
+
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
+</style>
+
+
+</head>
+<body>
+
+<h1>Hola Programadores</h1>
+<p id="primero">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime maiores aperiam minima. Exercitationem atque sed et officiis corrupti dolores nulla consequatur architecto voluptas dignissimos, animi non soluta itaque dolore possimus?</p>
+<p id="segundo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime maiores aperiam minima. Exercitationem atque sed et officiis corrupti dolores nulla consequatur architecto voluptas dignissimos, animi non soluta itaque dolore possimus?</p>
+<p class="tercero">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime maiores aperiam minima. Exercitationem atque sed et officiis corrupti dolores nulla consequatur architecto voluptas dignissimos, animi non soluta itaque dolore possimus?</p>
+<button id="btn-hide">Hide</button>
+<button id="btn-show">Show</button>
+<button id="btn-aniadir">Añadir</button>
+
+
+    <script>
+        //el hide esconde el h1
+        // $("h1").hide();
+        //ejecutando aqui nos aseguramos de que el documento ha terminado de cargar
+        $(document).ready(function(){
+        
+        //selectores
+        //todos los parafos se seleccionan 
+        $("p").css({"background-color":"red"})
+        //se selecciona el parrafo que contiene el id primero 
+        $("#primero").css({"background-color":"blue"})
+        //se selecciona el parrafo que contiene la clase tercero 
+        $(".tercero").css({"background-color":"green"})
+
+
+        // ocultamos el primer parrafo al pulsar en boton hide
+        // $("#btn-hide").on("click",function(){
+        //     alert("se ha pulsado al botton hide")
+        //     $("#primero").hide();
+                //obtenemos el contenido del primer parrafo
+                //alert($("#primero").text());
+
+        // })
+
+
+        // mostramos el primer parrafo al pulsar el boton show
+        // $("#btn-show").on("click",function(){
+        //     alert("se ha pulsado al botton show")
+        //     $("#primero").show();
+        // })
+
+
+
+          // ocultamos el primer parrafo
+          $("#primero").mouseenter(function(){
+            $("#primero").hide();
+            //desaparece de forma mas lenta
+            $("#primero").fadeOut();
+            //desaparece de forma acordeon
+            // $("#primero").slideDown();
+        
+        })
+
+        // mostramos el primer parrafo cuando deja de aputar con
+        // el raton 
+        $("#primero").mouseleave(function(){
+            $("#primero").show();
+            //aparece de forma mas lenta
+            $("#primero").fadeIn();
+
+        })
+
+
+        //sustituir texto (text y html ) añadir (append o prepend)
+        $("#btn-aniadir").on("click", function(){
+        //con el text se añade literal el texto 
+        //  $("#segundo").text("Hola <strong>programadores</strong>")
+        //con el html se añade  sin las etiquetas
+         //   $("#segundo").html("Hola <strong>programadores</strong>")
+
+         //al final del parrafo 
+        // $("#segundo").append("Hola <strong>programadores</strong>")
+
+        //al principio del parrafo
+       // $("#segundo").prepend("Hola <strong>programadores</strong>")
+
+        //Despues del parrafo fuera de el crea lo siguiente
+       //  $("#segundo").after("Hola <strong>programadores</strong>")
+
+        //elimina 
+        // $("#segundo").remove();
+
+         //vacia 
+        // $("#segundo").empty();
+
+       //añade clase
+        //$("#segundo").addClass("blue");
+        //elimina clase
+        //$("#segundo").removeClass("blue");
+
+        //añade la clase si pulsamos y la quita si pulsamos otra vez  
+          //$("#segundo").toggleClass("blue");
+
+
+        });
+
+
+
+
+
+
+
+
+        });
+
+
+
+    </script>
+    
+</body>
+</html>

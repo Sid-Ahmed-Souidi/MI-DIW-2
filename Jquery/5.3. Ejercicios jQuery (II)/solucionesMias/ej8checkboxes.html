@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <input type="checkbox" id="audi" name="brand" value="Audi">
+    <label for="audi">Audi</label>
+    
+    <input type="checkbox" id="mercedes" name="brand" value="Mercedes">
+    <label for="mercedes">Mercedes</label>
+    
+    <input type="checkbox" id="hyundai" name="brand" value="Hyundai">
+    <label for="hyundai">Hyundai</label>
+    
+    <p id="message"></p>
+
+
+    <script>
+        $(document).ready(function(){
+            let texto = "Opciones seleccionadas : ";
+            $("input[name=brand]").on("change", function () {
+
+            if($("input[name='brand']:checked").length){
+                    texto+= $(this).val() + " ";
+
+            }
+
+            if(!$("input[name='brand']:checked").length){
+                texto = "No hay ninguna opcion seleccionada";
+            }
+
+            
+            $("#message").text(texto)
+
+            })
+            
+
+        });
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

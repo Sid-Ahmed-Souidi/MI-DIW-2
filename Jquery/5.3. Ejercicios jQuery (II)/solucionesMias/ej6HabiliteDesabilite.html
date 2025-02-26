@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <!-- A partir del siguiente formulario, crea el código jQuery para que el checkbox habilite/deshabilite el botón Enviar. -->
+
+
+    <form>
+        <label for="checkbox"> Selecciona para habilitar el botón:</label>
+        <input type="checkbox" id="checkbox">
+        <br>
+        <button id="submit-button" disabled>Enviar</button>
+    </form>
+    
+<script>
+// click es para detectar clics en el elemento, sin importar cambios en su valor.
+// change está diseñado para detectar cambios en el valor de un elemento de formulario, y en algunos casos,
+ // se dispara al finalizar la modificación (o inmediatamente en el caso de checkboxes y radios).   
+
+    $(document).ready(function(){
+   
+        $("#checkbox").on("change" , function(){
+            if($(this).prop("checked")){
+             $("#submit-button").prop("disabled", false);
+            }else{
+                $("#submit-button").prop("disabled", true);
+
+            }
+
+        })
+
+        
+
+
+
+
+
+    })
+
+
+//     Evento click:
+
+// Se dispara cada vez que haces clic en el elemento, sin importar si su valor cambia o no.
+// Puedes aplicarlo a casi cualquier elemento (botones, divs, imágenes, etc.).
+// Por ejemplo, si haces clic en un botón, el evento click se activa inmediatamente.
+// Evento change:
+
+// Se dispara cuando cambia el valor de un elemento y generalmente cuando se "confirma" ese cambio (por ejemplo, cuando un input pierde el foco después de modificarlo, o en un select cuando se elige una opción).
+// Está pensado para elementos de formularios como <input>, <textarea>, y <select>.
+// En elementos como checkboxes y radios, el evento change se dispara en el momento en que cambia el estado (por ejemplo, al marcar o desmarcar).
+
+</script>
+    
+
+    
+</body>
+</html>

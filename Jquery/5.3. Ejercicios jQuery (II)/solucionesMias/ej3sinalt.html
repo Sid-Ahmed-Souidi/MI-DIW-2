@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+        <!-- Crea el código jQuery que ponga la clase sinalt a todas las imágenes que no tengan el atributo alt o lo tengan vacío. -->
+
+    <img src="" alt="">
+    <img src="" alt="img3">
+    <img src="" >
+    <img src="" alt="img4">
+
+
+
+
+
+<script>
+
+    $(document).ready(function(){
+
+        $("img").each(function(index){
+            if(!$(this).attr("alt") || $(this).attr("alt").trim() === ""){
+                $(this).addClass("sinalt")
+            }
+
+        })
+    });
+
+
+
+//otra forma
+
+    // $(document).ready(function () {
+    //   $(".nav-item").on("click", function () {
+    //     $(".nav-item.active").removeClass("active");
+    //     // Otras formas de eliminar la clase active al ítem que ya lo tenía:
+    //     // $(".nav-item").removeClass("active");
+    //     // $(".nav-item.active").toggleClass("active");
+
+    //     // Ponemos la clase "active" al elemento que se ha hecho clic.
+    //     $(this).addClass("active");
+    //   });
+    // });
+
+
+
+
+
+
+</script>
+
+
+
+    
+</body>
+</html>
