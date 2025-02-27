@@ -22,14 +22,20 @@
 
     <script>
         $(document).ready(function(){
-            let texto = "Opciones seleccionadas : ";
             $("input[name=brand]").on("change", function () {
-
+            let texto = "Opciones seleccionadas : ";
+            //comprobamos que hay elementos  checked en los checkbox
             if($("input[name='brand']:checked").length){
-                    texto+= $(this).val() + " ";
+             //Aqui se recorre los elementos checked
+             //y recogemos el valor     
+            $("input[name='brand']:checked").each(function(){
+                texto+= $(this).val() + " ";
+            })           
+                
 
             }
 
+            //si no hay elementos checked imprimmos
             if(!$("input[name='brand']:checked").length){
                 texto = "No hay ninguna opcion seleccionada";
             }
