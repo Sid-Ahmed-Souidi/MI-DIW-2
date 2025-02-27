@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <select id="brands">
+        <option value="audi">Audi</option>
+        <option value="bmw">BMW</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="hyundai">Hyundai</option>
+      </select>
+      
+      <div id="resultado"></div>
+
+
+      <script>
+        $(document).ready(function(){
+            let contador = 0
+            $("#brands").on("change", function(){
+            
+                if($("ol#lista").length===0){
+                    //dettro de resultado creamos un ol donde va a tener un id lista
+                    $("#resultado").append("<ol>")
+                    .attr("id" , "lista")
+                }
+                //el append agrega un nuevo elemento
+                contador++;
+                $("#lista").append(
+                    $("<li>").text("Has seleccionado " +contador ,$(this).val()));
+
+            })
+
+            
+
+
+        })
+
+      </script>
+
+
+
+
+
+
+    
+</body>
+</html>

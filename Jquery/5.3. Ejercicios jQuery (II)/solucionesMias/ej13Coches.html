@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+    <input type="button" value="Actualizar" id="refresh">
+    <div id="respuesta"></div>
+
+
+
+<script>
+
+    $(document).ready(function(){
+        $("#refresh").on("click" ,function(){
+            $.ajax({
+                url:"coches.json",
+                type:"GET",
+                success:function(data){
+                    $("#respuesta").empty();
+                    let ul_externo =  $("<ul>");
+                        
+                    data.forEach(function(marcas){
+                        // $("#resultado").append("<ol>")
+                        //     .attr("id" , "lista")
+                        let liMarcas = $("<li>").text(marcas.marca);
+
+
+                         let ul_interno = $("<ul>");
+
+                        marcas.coches.forEach(function(coches){
+
+                            let liCoches = $("<li>").text(coches.modelo);
+                            ul_interno.append(liCoches);
+
+
+                        })
+
+                        liMarcas.append(ul_interno);
+                        ul_externo.append(liMarcas);
+                        $("#respuesta").html(ul_externo);
+
+                    })
+
+
+
+                },
+                error: function(error){
+                        alert("error en la llamada de ajax");
+                    }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

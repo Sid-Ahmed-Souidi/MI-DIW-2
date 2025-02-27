@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    
+<form id="login-form">
+    <input type="text" name="username" id="username" placeholder="Nombre de Usuario">
+    <input type="password" name="password" id="password" placeholder="Contraseña">
+    <input type="button" id="submit-btn" value="Iniciar Sesión">
+    <div id="alert"></div>
+</form>
+
+
+<script>
+
+
+$(document).ready(function(){
+    $("#submit-btn").on("click" , function(){
+         let texto = "";
+        if($("#username").val()===""){
+            texto +=" El usuario esta vacio ";
+        }
+        if($("#password").val()===""){
+          texto +=" La contraseña esta vacia";
+        }
+
+        $("#alert").text(texto);
+        
+    })
+
+    //Forma con el boton submit para que se evite enviar el formulario 
+    
+    //  // Es mejor usar el evento submit en lugar de click para validar formularios
+    //  $("#login-form").on("submit", function (e) {
+    //     e.preventDefault(); // Evita que se envíe el formulario
+
+    //     // Oculta el mensaje de alerta si estaba visible
+    //     $("#alert").hide();
+
+    //     if ($("#username").val().trim() === "" || $("#password").val().trim() === "") {
+    //       $("#alert").text("Por favor, ingrese un usuario y una contraseña.").slideDown();
+    //     }
+    //   });
+    // });
+ 
+})
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

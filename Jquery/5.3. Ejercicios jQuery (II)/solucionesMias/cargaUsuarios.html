@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo AJAX con jQuery</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2>Lista de Usuarios</h2>
+    <button id="cargarUsuarios">Cargar Usuarios</button>
+    <ul id="listaUsuarios"></ul>
+
+    <script>
+        $(document).ready(function(){
+            $("#cargarUsuarios").on("click",function(){
+                $.ajax({
+                    url: "usuarios.json",  // Archivo JSON con datos
+                    type: "GET",
+                    dataType: "json",
+                    success: function(respuesta) {
+                        $("#listaUsuarios").empty(); // Limpia la lista antes de insertar nuevos datos
+                        respuesta.usuarios.forEach(function(usuario) {
+                            $("#listaUsuarios").append("<li>" + usuario.nombre + " - " + usuario.email + "</li>");
+                        });
+                    },
+                    error: function() {
+                        alert("Error al cargar los usuarios.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

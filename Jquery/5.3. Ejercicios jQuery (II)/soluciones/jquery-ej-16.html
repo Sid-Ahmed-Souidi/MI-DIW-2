@@ -80,6 +80,7 @@
     // Función para cargar resultados cada 5 segundos
     function cargarResultados() {
       $('#res').load("jquery-ej-16-resultados.txt", function (response, status, xhr) {
+        //aparece y desaparece el mensaje que se obtiene
         $('#res').fadeOut().fadeIn();
         if (status == "error") {
           $('#res').empty().text("Error al cargar los resultados.");
