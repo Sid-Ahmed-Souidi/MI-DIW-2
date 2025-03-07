@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark fixed-top" data-bs-theme="dark" aria-label="Fourth navbar example">
+          <div class="container-lg d-flex justify-content-between">
+            <a class="navbar-brand" href="#"
+              ><i class="bi bi-house-door-fill"></i>
+              <span>Brand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="registro.html">Registro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-disabled="true">Servicios</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Recursos</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+      
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-disabled="true">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+    <!-- Formulario -->
+    <div class="container-lg mt-5 pt-5">
+        <!-- <div id="alertaError" class="alert alert-danger d-none text-center" role="alert">
+             Codigo descuento vacio.
+             <button type="button" class="btn-close" id="cerrarAlerta" aria-label="Close"></button>
+
+        </div> -->
+        <div class="toast align-items-center end-0 z-1 position-absolute mt-3 me-3" id="toastId" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body"  id="toastInterno">
+              </div>
+              <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        <div class="card shadow-lg mx-auto p-4 w-100 w-md-75 w-lg-50">
+            <div class="card-header bg-success text-white text-center fs-4">
+                Formulario de Registro
+            </div>
+            <div class="card-body mt-3 p-0">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <input type="text" class="form-control" id="nombre" data-bs-toggle="tooltip" title="Ingrese el nombre"  placeholder="Nombre">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="text" class="form-control" id="apellidos"  data-bs-toggle="tooltip" title="Ingrese sus apellidos" placeholder="Apellidos">
+
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="email" class="form-control" id="email" data-bs-toggle="tooltip" title="Ingrese el email" placeholder="Correo electrónico">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="usuario" data-bs-toggle="tooltip" title="Ingrese el tipo de usuario">
+                                <option selected>Seleccione tipo de usuario</option>
+                                <option value="1">Individual</option>
+                                <option value="2">Empresa</option>
+                                <option value="3">Corporativo</option>
+
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input class="form-control" list="listaComunidades" id="comunidadAutonoma" placeholder="Comunidad Autónoma" data-bs-toggle="tooltip" title="Indica la CCAA donde vives"  >
+                            <datalist id="listaComunidades">
+                                <option value="Aragón"></option>
+                                <option value="Asturias"></option>
+                                <option value="Andalucía"></option>
+                                <option value="Baleares"></option>
+                                <option value="Canarias"></option>
+                                <option value="Ceuta"></option>
+                                <option value="Madrid"></option>
+                                <option value="Navarra"></option>
+                                <option value="País Vasco"></option>
+                                <option value="La Rioja"></option>
+                                <option value="Melilla"></option>
+                                <option value="Cantabria"></option>
+                                <option value="Comunidad Valenciana"></option>
+                                <option value="Castilla-La Mancha"></option>
+                                <option value="Castilla y León"></option>
+                                <option value="Cataluña"></option>
+                                <option value="Extremadura"></option>
+                                <option value="Galicia"></option>
+                                <option value="Murcia"></option>
+                          
+
+                            </datalist>
+                       
+                        </div>
+                        <div class="col-12 col-md-6 d-flex">
+                            <input type="text" id="codigoReferido" class="form-control" placeholder="Código de referido" data-bs-toggle="tooltip" title="Ingrese el codigo diferido">
+                            <button class="btn btn-secondary" id="btnAplicar">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-4">
+                            <label class="form-label fw-bold">Intereses</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interes1">
+                                <label class="form-check-label" for="interes1">Tecnología</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interes2">
+                                <label class="form-check-label" for="interes2">Negocios</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interes3">
+                                <label class="form-check-label" for="interes3">Diseño</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label class="form-label fw-bold">Plan de Suscripción</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="plan" id="planBasico">
+                                <label class="form-check-label" for="planBasico">Plan Básico <i  data-bs-toggle="tooltip" title="Plan gratuito con funciones básicas" class="bi bi-info-circle"></i></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="plan" id="planPremium">
+                                <label class="form-check-label" for="planPremium">Plan Premium <i  data-bs-toggle="tooltip" title="Plan con todas las funciones desbloqueada" class="bi bi-info-circle"></i></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 d-flex">
+                            <label class="form-label fw-bold m-2">Tema:</label>
+                            <div class="d-flex">
+                                <input type="color" class="form-control form-control-color" id="colorP" value="#000000">
+                                <span  id="colorH" class="ms-2 fw-bold m-2">#000000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="button"  id="registrarse"  class="btn btn-primary px-4">Registrarse</button>
+                    </div>
+
+                    <div id="alertaDescuento" class="alert alert-success d-none d-flex  mt-3" role="alert">
+                     
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const toastElList = document.querySelectorAll('.toast')
+        const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl))
+        
+        $(document).ready(function() {
+
+    const $colorP = $('#colorP');
+    const $colorH = $('#colorH');
+
+    // Evento cuando se ha seleccionado el color
+    $colorP.on('change', function() {
+        $colorH.css('color', $colorP.val()).text($colorP.val());
+    });
+
+    const $codigoReferido = $('#codigoReferido');
+    const $registrarse = $('#registrarse');
+    const $alertaError = $('#alertaError');
+    const $alertaDescuento = $('#alertaDescuento');
+    const $cerrarAlerta = $('#cerrarAlerta');
+    const  $toastElement = $('#toastId');
+
+    $('#btnAplicar').on('click', function(e) {
+        e.preventDefault(); // Previene que el formulario se envíe
+
+        $.ajax({
+            url: 'codigos.json', 
+            type: 'GET',
+            success: function(data) {
+                if ($codigoReferido.val().trim() === '') {
+
+                    $('.toast-body').text('Rellene el codigo referido ').css('color', 'white');            
+                    let toast = new bootstrap.Toast($toastElement);
+                    $toastElement.addClass('bg-success');
+                    $toastElement.addClass('bg-danger');
+                    toast.show(); //
+                    
+                
+                } else {
+                    let campoReferido = $('#codigoReferido').val();  
+                    let campoEncontrado = '';
+                    let encontrado = false;
+                    data.forEach(element => {
+                        if (campoReferido === element.codigo) {
+                            encontrado = true;
+                            campoEncontrado = element.descuento;
+                        }
+                    });
+
+                    if (encontrado) {
+                        console.log(campoEncontrado);
+                        // $alertaError.removeClass('d-none').addClass('show').text("Tu descuento es de: "+campoEncontrado);
+                        $alertaDescuento.removeClass('d-none').addClass('show').text("Tu descuento es de: " + campoEncontrado);
+                        $('.toast-body').text('Tu descuento es : '+campoEncontrado).css('color', 'white');       
+                        $('#codigoReferido, #btnAplicar').prop('disabled', true);     
+                        let toast = new bootstrap.Toast($toastElement);
+                        $toastElement.removeClass('bg-danger');
+                        $toastElement.addClass('bg-success');
+                        toast.show(); //
+                        
+                        
+                    } else {
+                        // Mostrar el mensaje de que el código no existe
+                        //$alertaError.removeClass('d-none').addClass('show').text('El código no existe');
+                        // Aplicar estilos con JavaScript
+                        $('.toast-body').text('el codigo no exite ').css('color', 'white');            
+                        let toast = new bootstrap.Toast($toastElement);
+                        $toastElement.removeClass('bg-success');
+                        $toastElement.addClass('bg-danger');
+                        toast.show(); //
+                        console.log('Código no existe');
+                    }
+                }
+            },
+        });
+    });
+
+    $('#registrarse').on('click', function(e) {
+        let planSeleccionado = $('input[name="plan"]:checked').next('label').text().trim();
+
+    if (planSeleccionado) {
+
+
+    } else {
+      console.log('Debes seleccionar un plan de suscripción');
+      console.log('Plan seleccionado:', planSeleccionado);
+      $('.toast-body').text('Debes seleccionar un plan de suscripción').css('color', 'white');            
+      let toast = new bootstrap.Toast($toastElement);
+      $toastElement.removeClass('bg-success');
+      $toastElement.addClass('bg-danger');
+      toast.show(); //
+    }
+    
+
+    });
+
+    // Cerrar la alerta al hacer clic en el botón de cerrar
+    $cerrarAlerta.on('click', function() {
+        $alertaError.addClass('d-none');
+    });
+
+    // Ocultar la alerta cuando el usuario empieza a escribir en el input
+    $codigoReferido.on('input', function() {
+        if ($codigoReferido.val().trim() !== '') {
+            $alertaError.addClass('d-none');
+        }
+    });
+});
+    </script>
+</body>
+</html>
