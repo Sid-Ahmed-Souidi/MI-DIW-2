@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <style>
+        .highlight { background-color: yellow; }
+        .hidden { display: none; }
+      </style>
+      
+      <h1 id="main-title">Título principal</h1>
+      <p id="description" class="hidden">Este es un párrafo con una clase oculta.</p>
+      <button id="toggle-class">Cambiar clase</button>
+      <input id="input-field" type="text" value="Texto inicial">
+      <a id="link" href="https://example.com">Ir a Example</a>
+      <button id="submit-button" disabled>Enviar</button>
+    
+</body>
+
+        <script>
+            $(document).ready(function(){
+                
+                //Usa addClass() para añadir la clase highlight al elemento #main-title
+                $('#main-title').addClass('highlight');
+
+                //2. Usa attr() para cambiar el atributo href del enlace #link.
+                $('#link').attr('href' ,"https://marca.com");
+
+
+                //3. Usa hasClass() para comprobar si el párrafo #description tiene la clase hidden. Muestra el resultado en la consola.
+                console.log($('#description').hasClass('hidden'));
+
+
+                //4. Usa html() para cambiar el contenido del título con ID main-title a Título actualizado con jQuery.
+                $('#main-title').html('Titulo actualizado con Jquery')
+
+                //5. Usa prop() para habilitar el botón con ID submit-button.
+                // $('#submit-button').prop('disabled',true);
+
+                // 6. Usa removeAttr() para eliminar el atributo href del enlace con #link.
+                $('#link').removeAttr('href');
+
+               
+               // 7. Usa removeClass() para quitar la clase hidden del párrafo #description. (se muestra un parrafo que estaba oculto)
+               $('#description').removeClass('hidden');
+
+              // 8. Usa removeProp() para eliminar la propiedad disabled del botón #submit-button.
+              $("#submit-button")[0].removeAttribute("disabled");
+
+            //9. Usa toggleClass() para alternar la clase highlight en el botón #toggle-class cada vez que se haga clic en él.
+            $('#toggle-class').on('click' , function(){
+                $(this).toggleClass('highlight');
+
+            })
+
+          //  10. Usa val() para cambiar el valor del campo de entrada con ID #input-field.
+            $('#input-field').val('cambiado con val()')
+
+
+             
+
+
+
+
+
+            })
+
+   
+
+
+
+
+
+
+
+
+
+            
+
+        </script>
+
+
+
+
+
+
+
+
+
+</html>

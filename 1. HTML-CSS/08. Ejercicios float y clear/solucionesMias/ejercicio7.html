@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+        * {
+       box-sizing: border-box;
+   }
+   .clearfix::after {
+     content: "";
+     clear: both;
+     display: table;
+   }
+
+
+header{
+    background-color: gray;
+    padding: 30px;
+    color: white;
+}
+footer{
+    background-color: gray;
+    padding: 30px;
+    color: white;
+}
+
+.lorem{
+    padding: 20px;
+    background-color: blue;
+    margin: 20px;
+}
+
+
+
+.lorem-ipsum{
+    width: 30%;
+    float: left;
+}
+
+.lorem-ipsum-2{
+    width: 70%;
+    float: right;
+    margin-top: 30px;
+}
+
+
+</style>
+
+
+
+<body>
+
+<header>
+<h1>Cabecera</h1>
+</header>
+
+<main>
+<div class="clearfix">
+<div class="lorem-ipsum">
+<div class="lorem">Ipsum</div>
+<div class="lorem">Dolor</div>
+<div class="lorem">Sit</div>
+<div class="lorem"> lorem</div>
+</div>
+
+<div class="lorem-ipsum-2">
+    <h1>Lorem ipsum</h1>
+
+    <div class="texto">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, perspiciatis officiis? Nulla perferendis, autem praesentium numquam libero soluta velit hic ducimus consequuntur, fugiat odio facilis culpa deleniti, ab natus eligendi.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel nesciunt quo laudantium amet quisquam necessitatibus sint voluptatibus repellendus, ea eveniet delectus rerum corrupti. Impedit minus maiores rerum veniam tenetur!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quam, et veritatis officia nostrum nesciunt maxime similique? Eum, doloremque aperiam vel incidunt nemo necessitatibus, praesentium voluptates eius adipisci dolorum saepe?
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <p>Pie de pagina</p>
+</footer>
+
+
+    
+</body>
+</html>

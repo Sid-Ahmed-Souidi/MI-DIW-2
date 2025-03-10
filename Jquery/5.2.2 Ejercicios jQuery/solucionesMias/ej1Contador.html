@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <textarea name="textarea" id="textarea"></textarea>
+    <span id="contador"></span>
+
+        <!-- CHANGE -->
+
+    <!-- Se activa cuando el usuario termina de modificar el valor de un
+     <input> o <textarea> y pierde el foco (cuando hace clic fuera o presiona "Enter" en algunos casos).
+ -->
+ <!-- Funciona mejor para <select>, <input type="checkbox">, <input type="radio"> y <input type="text">. -->
+
+        <!-- INPUT -->
+
+    <!-- input ($('#textarea').on('input', ...)):
+    Se dispara cada vez que cambia el contenido del elemento, sin necesidad de que el usuario pierda el foco.
+    en tiempo real 
+    Funciona en <input> y <textarea>. -->
+
+    <script>
+        $(document).ready(function(){
+            $('#textarea').on('input',function(){
+                let caracteres = $(this).val().length;
+                $('#contador').text(caracteres);
+            })
+        })
+
+
+
+    </script>
+
+</body>
+</html>

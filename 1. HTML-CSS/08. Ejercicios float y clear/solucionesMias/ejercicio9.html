@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     * {
+    box-sizing: border-box;
+  }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    nav{
+        background-color: #000000;
+    }
+    a{
+        color: white;
+        padding: 15px;       
+        float: left;
+ 
+    }
+    .salir{
+        float: right;
+    }
+    nav a:hover {
+      background-color: red;
+    }
+
+
+</style>
+
+
+<body>
+
+    <nav class="clearfix">
+            <a class="d">inicio</a>
+            <a class="d">nosotros</a>
+            <a class="d">productos</a>
+            <a class="d">contacto</a>
+             <a class="salir">Salir</a>
+    </nav>
+
+
+    
+</body>
+</html>

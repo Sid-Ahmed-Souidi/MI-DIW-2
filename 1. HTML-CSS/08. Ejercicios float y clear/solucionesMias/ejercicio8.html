@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+   }
+   .clearfix::after {
+     content: "";
+     clear: both;
+     display: table;
+   }
+   .img-container{
+    width: 33.33%;
+    padding: 5px;
+    float: left;
+
+   }
+   footer{
+    padding: 40px;
+    background-color: gray;
+   }
+   img{
+    width: 100%;
+
+   }
+   .curso{
+    float: left;
+   }
+   .nombre{
+    float: right;
+   }
+   .p{
+    width: 33%;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+   }
+</style>
+
+
+<body>
+
+    <div class="clearfix">
+        <div class="img-container">
+        <img src="https://fastly.picsum.photos/id/14/400/200.jpg?hmac=mPm1Ye5LvYmwb-fxkX9sZCqYK-6-JWln27ATh1bDYyM" alt="" class="img1">
+        </div>
+        <div class="img-container">
+        <img src="https://fastly.picsum.photos/id/16/400/200.jpg?hmac=iSbnkFOqORbPmy3uLuSODekSZ1aIY66lCP6avBYfx44" alt="" class="img2">
+        </div>
+        <div class="img-container">
+        <img src="https://fastly.picsum.photos/id/17/400/200.jpg?hmac=wjogV1PePACCHgyt6nDn-0V9vLlchNQSqSik4O1Rm6w" alt="" class="img3">
+        </div>
+
+    </div>
+    <div class="clearfix">
+        <p class="p">Lorem ipsum dolor sit amet</p>
+        <p class="p">Facilis tempora ab quibusdam</p>
+        <p class="p">Autem saepe accusantium</p>
+    </div>
+
+
+<footer>
+    <div class="clearfix">
+    <p class="curso">2ªDAW.Diseño de interfaces web</p>
+    <p class="nombre"> Sid Ahmed Souidi</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

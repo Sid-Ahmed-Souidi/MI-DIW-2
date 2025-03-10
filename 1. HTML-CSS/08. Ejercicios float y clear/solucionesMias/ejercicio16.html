@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo16.css">
+</head>
+<body>
+        <style>
+    .container{
+     max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid black;
+    
+    }
+    .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    .icon{
+      float: left;
+      padding: 0;
+      margin-right: 5px;
+    }
+
+    .todo-info{
+      float: left;
+
+    }
+    .check{
+        float: right;
+        margin: 10px;
+
+    }
+    .todo{
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+
+    }
+
+
+
+        </style>
+    <div class="container">
+        <!-- To Do list -->
+        <div class="todo-list">
+          <!-- To Do Item -->
+          <div class="todo clearfix">
+            <div class="icon urgent">&#9679;</div>
+            <div class="todo-info">
+              <div class="todo-title">Pay Rent</div>
+              <div class="todo-date">April 1</div>
+            </div>
+            <div class="check">
+              <input type="checkbox" class="checkbox-right" value="None" name="check">
+              <label for="check"></label>
+            </div>
+          </div>
+      
+          <!-- To Do Item -->
+          <div class="todo clearfix">
+            <div class="icon urgent">&#9679;</div>
+            <div class="todo-info">
+              <div class="todo-title">Pay taxes</div>
+              <div class="todo-date">April 14</div>
+            </div>
+            <div class="check">
+              <input type="checkbox" class="checkbox-right" value="None" name="check">
+              <label for="check"></label>
+            </div>
+          </div>
+      
+          <!-- To Do Item -->
+          <div class="todo clearfix">
+            <div class="icon medium">&#9679;</div>
+            <div class="todo-info">
+              <div class="todo-title">Do floats homework</div>
+              <div class="todo-date">Monday, April 21</div>
+            </div>
+            <div class="check">
+              <input type="checkbox" class="checkbox-right" value="None" name="check">
+              <label for="check"></label>
+            </div>
+          </div>
+      
+          <!-- To Do Item -->
+          <div class="todo clearfix">
+            <div class="icon medium">&#9679;</div>
+            <div class="todo-info">
+              <div class="todo-title">Get groceries</div>
+              <div class="todo-date">Friday, April 18</div>
+            </div>
+            <div class="check">
+              <input type="checkbox" class="checkbox-right" value="None" name="check">
+              <label for="check"></label>
+            </div>
+          </div>
+      
+          <!-- To Do Item -->
+          <div class="todo clearfix">
+            <div class="icon">&#9679;</div>
+            <div class="todo-info">
+              <div class="todo-title">Get a haircut</div>
+              <div class="todo-date">Friday, April 18</div>
+            </div>
+            <div class="check">
+              <input type="checkbox" class="checkbox-right" value="None" name="check">
+              <label for="check"></label>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+
+
+</body>
+</html>
