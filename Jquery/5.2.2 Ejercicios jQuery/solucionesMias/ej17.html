@@ -84,12 +84,24 @@
 
                 }
 
-                $('input[name="salsa"]').on('change')
             }
       })
+         // Ejercicio 17.3
+      // Agregamos marca de verificación al seleccionar un radiobutton 
+      // en este caso por que se añade dinamicamente  y se usa'input[type="radio"]'
+       $("#salsas").on('change', 'input[type="radio"]', function () {
+          // Quitamos la marca de verificación a todos los elementos
+          $('input[name="salsa"]').siblings('span').remove();
+
+          // Y se la ponemos al radiobutton seleccionado.
+          $(this).parent().append(
+            $("<span>")
+              .text('✓')
+              .css('color', 'green'));
+        });
+      });
 
   
-      });
 
   </script>
 </html>
