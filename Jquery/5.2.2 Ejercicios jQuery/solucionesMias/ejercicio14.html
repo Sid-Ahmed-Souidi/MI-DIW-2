@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+
+    <style>
+        #error-message {
+          display: none;
+          color: red;
+        }
+      </style>
+      
+      <label for="binary-input">Introduce un número binario:</label>
+      <input type="text" id="binary-input" maxlength="8">      
+      <div id="error-message">Introduce sólo números binarios (0 ó 1).</div>
+
+    
+</body>
+
+
+<script>
+    $(document).ready(function(){
+        $('#binary-input').on('keydown', function(event){
+            //input text devuelve un valor string no un numerico 
+
+            //event.key   Captura la tecla antes de que se agregue al input
+            if(event.key!=='1' && event.key!=='0'){
+                $('#error-message').fadeIn(1000).fadeOut(1000)
+                //de esta manera no dejo que se inserten los distintos a 1 y 0
+                event.preventDefault();
+            }
+        })
+    })
+
+
+
+
+</script>
+
+
+</html>

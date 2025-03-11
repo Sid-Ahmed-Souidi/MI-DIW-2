@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <form id="login-form">
+        <input type="text" name="username" id="username" placeholder="Nombre de Usuario">
+        <input type="password" name="password" id="password" placeholder="Contraseña">
+        <input type="submit" id="submit-btn" value="Iniciar Sesión">
+        
+        <div id="alert"></div>
+      </form>
+
+</body>
+
+
+
+    <script>
+        $(document).ready(function(){
+
+            $('#login-form').on('submit' , function(e){
+            e.preventDefault();
+            let nombre  = $('#username').val()
+            let contraseña = $('#password').val()
+
+            //ocultamos primero el div antes de usar slideDown
+            $('#alert').hide();
+            if(nombre==="" || contraseña===""){
+                $("#alert").text("Password o usuario estan vacios")
+                $("#alert").slideDown(1000);
+
+            }
+
+
+            })
+
+        })
+
+
+    </script>
+</html>
