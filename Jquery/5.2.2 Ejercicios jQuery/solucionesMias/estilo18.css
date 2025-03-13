@@ -1,0 +1,41 @@
+#res-container {
+    max-width: 500px;
+    font-size: 0.75em;
+    border: 1px solid #cccccc;
+    background-color: #e6e6e6;
+    padding: 1em;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul#product-list li.product {
+    cursor: pointer;
+    padding: 0.5em;
+  }
+  
+  ul#product-list li.product span {
+    font-size: 0.75em;
+    color: #fff;
+    margin-left: 0.5em;
+    padding: 0.325em;
+    background-color: #797edb;
+    border-radius: 0.25em;
+  }
+  
+  ul#product-list li.product.active,
+  ul#product-list li.product:hover {
+    background-color: #ccc;
+  }
+  
+  ul#product-list li.product ul.reviews {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #ffffff;
+    border-left: 8px solid #797edb;
+    font-size: 0.85em;
+    display: none;
+  }

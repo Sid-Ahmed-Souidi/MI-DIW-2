@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - jQuery</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        .contenedor {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        ul {
+            list-style: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 220px;
+            height: 250px;
+            background: #f3f3f3;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .seleccionado {
+            background: lightgreen;
+        }
+        .boton {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 1: Listas con jQuery</h1>
+
+    <div class="contenedor">
+        <ul id="grupo1">
+            <li>Manzana</li>
+            <li>Banana</li>
+            <li>Cereza</li>
+            <li>Uva</li>
+            <li>Melón</li>
+        </ul>
+
+        <div class="boton">
+            <button id="moverDr">Mover al grupo derecha</button>
+        </div>
+        <div class="boton">
+            <button id="moverIz">Mover al grupo izquierda</button>
+        </div>
+
+        <ul id="grupo2"></ul>
+    </div>
+
+</body>
+
+<script>
+    $(document).ready(function(){
+        $("ul").on("click" , "li" , function(){
+            $("ul li").each(function(){
+                $(this).removeClass("seleccionado");
+
+            })
+            $(this).addClass("seleccionado");
+
+
+        })
+
+        $("#moverDr").on("click" , function(){
+                $("#grupo1 li").each(function(){
+                    if($(this).hasClass("seleccionado")){
+                        $("#grupo2").append($(this))
+                    }
+
+                })
+        })
+
+
+        $("#moverIz").on("click" , function(){
+            $("#grupo2 li.seleccionado").appendTo("#grupo1");
+
+        })
+
+
+    })
+
+
+
+</script>
+
+
+</html>

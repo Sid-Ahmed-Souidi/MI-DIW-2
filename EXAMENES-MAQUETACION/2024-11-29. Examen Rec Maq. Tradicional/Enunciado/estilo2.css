@@ -1,0 +1,78 @@
+:root {
+    --lorem1-color: #3498db;
+    --lorem2-color: hsl(145, 63%, 49%);
+    --lorem3-color: #ed2ef0;
+    --lorem4-color: #dd2a2a;
+
+  }
+  
+
+
+  * {
+    box-sizing: border-box;
+    /* Truco para visualizar capas anidadas */
+  }
+
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  header{
+    position: relative;
+  }
+
+
+.titulo {
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    top: 30%;
+    margin-left: 15px;
+}
+
+
+
+
+header img {
+    width: 100%;
+}
+
+.lorem{
+    padding: 20px;
+    border-radius:10px ;
+}
+
+.lorem h3{
+    border-bottom: 1px solid black;
+}
+
+
+.paisaje{
+    width: 100%;
+}
+
+.sonrisa{
+    width: 20px;
+    float: right;
+    margin-top: 15px;
+}
+
+.lorem1{
+    background-color: var(--lorem1-color);
+}
+
+.lorem2{
+    background-color: var(--lorem2-color);
+}
+
+.lorem3{
+    background-color: var(--lorem3-color);
+}
+
+.lorem4{
+    background-color: var(--lorem4-color);    
+}
+  

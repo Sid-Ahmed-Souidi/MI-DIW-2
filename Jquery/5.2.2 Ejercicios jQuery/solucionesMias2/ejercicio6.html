@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+
+
+<form>
+  <label for="checkbox"> Selecciona para habilitar el botón:</label>
+  <input type="checkbox" id="checkbox">
+  <br>
+  <button id="submit-button" disabled>Enviar</button>
+</form>
+
+
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $("#checkbox").on("change" , function(){
+            if($("#submit-button").attr("disabled")){
+                $("#submit-button").attr("disabled" , false)
+
+            }else{
+                $("#submit-button").attr("disabled" , true)
+
+            }
+
+
+        })
+
+
+    })
+
+
+</script>
+</html>

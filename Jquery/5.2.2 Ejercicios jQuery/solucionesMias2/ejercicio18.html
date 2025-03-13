@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="estilo18.css">
+</head>
+<body>
+
+
+<div id="res-container"></div>
+
+
+    
+</body>
+
+    <script>
+
+        $(document).ready(function(){
+            $.ajax({
+          url: "https://dummyjson.com/products",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            ul_product_list  = $('<ul>').attr("id" , "product-list");
+            $(data.products).each(function(index , productos){
+             li_product  = $('<li>').addClass("product active").attr("data-product-id" , "1");
+            li_product.append(productos.title)
+
+            span1 = $("<span>");
+            span2 = $("<span>");
+
+            span1.append(productos.tags[0])
+            span2.append(productos.tags[1])
+            
+            li_product.append(span1)
+            li_product.append(span2)
+
+                ul_interno = $('<ul>').addClass("reviews").css({"display":"block"})
+                    $(productos.reviews).each(function(index , opiniones){
+                        console.log(opiniones)
+                        li_interno = $('<li>');
+                        $(li_interno).text(opiniones.rating+" "+opiniones.reviewerName +" : "+opiniones.comment)    
+                        $(ul_interno).append(li_interno)
+
+                    })
+                    $(li_product).append(ul_interno);
+                    $(ul_product_list).append(li_product);
+        })
+            $("#res-container").append(ul_product_list)
+            
+            
+
+          },
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+            
+          },
+          complete: function (xhr, status) {
+            console.log("La solicitud se ha completado");
+            console.log("Estado final:", status);
+          },
+        });
+
+
+
+
+        })
+
+    </script>
+
+
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2024-02-29. Examen Bootstrap + jQuery</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body class="p-2">
+
+  <h1 class="mb-3 text-bg-danger text-center py-2">Busca Casa</h1>
+
+  <div class="container-lg">
+
+    <div class="row">
+
+      <div class="col-md-4 col-sm-6 mb-3 mb-md-0">
+        <div class="border border-2 p-3">
+          <form id="form-casas" action="/">
+
+            <div class="mb-3">
+              <div class="form-floating">
+                <input type="text" class="form-control form-control-sm" id="poblacion" name="poblacion" placeholder="">
+                <label for="poblacion">Población</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="precio" class="form-label">Precio máximo: <span id="precioMostrado" class="badge text-bg-info">1000 €</span></label>
+              <input type="range" class="form-range" id="precio" name="precio" min="0" max="1000" step="100" value="1000">
+            </div>
+
+            <div class="mb-3">
+              <h4>Habitaciones</h4>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="garaje">
+                    <label class="form-check-label" for="garaje">Garaje</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="ascensor">
+                    <label class="form-check-label" for="ascensor">Ascensor</label>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="terraza">
+                    <label class="form-check-label" for="terraza">Terraza</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="piscina">
+                    <label class="form-check-label" for="piscina">Piscina</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <h4>Equipamiento</h4>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="equipamiento" id="amueblado" checked>
+                <label class="form-check-label" for="amueblado">Amueblado</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="equipamiento" id="no_amueblado">
+                <label class="form-check-label" for="no_amueblado">No amueblado</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary d-block mx-auto mt-3">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-6">
+
+        <div class="border border-2 p-3">
+
+          <h5>Resultados:</h5>
+
+          <div id="resultados">
+            <div class="alert hide" id="alert-resultados" role="alert"></div>
+
+            <div id="viviendas"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+        $(document).ready(function(){
+            $('#precio').on("input" , function(){
+               $("#precioMostrado").text($(this).val());
+
+            })
+
+
+
+    $("#form-casas").on("submit"  , function(e){
+        e.preventDefault()
+        let poblacion  = $("#poblacion").val();
+        if(poblacion===""){
+            $("#poblacion").after($("<p>").text("indica poblacion").css("color","red"))
+            
+        }else{
+            $(".form-floating p").remove();
+            $.ajax({
+          url: "viviendas.json",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            console.log(data)
+            if(data.viviendas.length===0){
+            $("#alert-resultados")
+            .text("Lo siento no tenemos viviendas para ti")
+            .removeClass("alert-success")
+            .addClass("alert-danger")
+
+            }else{
+
+            $("#alert-resultados")
+            .text("Hemos encontrado viviendas para ti")
+            .removeClass("alert-danger")
+            .addClass("alert-success")
+
+            $(data.viviendas).each(function(index , vivienda){
+            $("#viviendas").append($('<p>').text("precio :"+vivienda.precio+" direccion: "+vivienda.direccion))
+            
+            })
+
+            }
+
+      
+          },
+
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+            
+            $("#alert-resultados")
+            .text("Se ha producido un error en la llamada")
+            .removeClass("alert-success")
+            .addClass("alert-danger")
+          },
+          complete: function (xhr, status) {
+            console.log("La solicitud se ha completado");
+            console.log("Estado final:", status);
+          },
+        });
+
+
+
+        }
+
+
+
+
+    })            
+        })
+
+
+
+
+  
+  </script>
+</body>
+
+</html>

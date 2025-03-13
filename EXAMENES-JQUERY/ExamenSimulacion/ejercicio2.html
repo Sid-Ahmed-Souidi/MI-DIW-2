@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - jQuery</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h1>Ejercicio 2: Registro de Usuarios</h1>
+
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+        <br><br>
+
+        <label>Selecciona un lenguaje:</label>
+        <select id="lenguaje">
+            <option value="">--Selecciona uno--</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+        </select>
+        <br><br>
+
+        <button type="button" id="registrar">Registrar</button>
+        <button type="button" id="borrar">Borrar Todo</button>
+    </form>
+
+    <div id="registros"></div>
+
+</body>
+
+<script>
+        $(document).ready(function(){
+
+            $("#registrar").on("click" , function(){
+
+                if($('#nombre').val()==="" || $('#lenguaje').val()===""){
+                    $("span").remove()
+                    $("#registros").after($('<span>').text("inserte los campos necesarios").css("color" ,"red"))
+
+                }
+                else{
+                    $("span").remove()
+                    $("#registros").append($('<li>')
+                    .text("Nombre : "+$('#nombre').val()+" lenguaje "+$('#lenguaje').val())
+                    .css("color","blue"))
+
+                }
+            })
+
+            $("#borrar").on("click" , function(){
+                $("#registros").empty()
+
+
+            })
+
+
+
+
+
+
+        })
+
+
+</script>
+</html>

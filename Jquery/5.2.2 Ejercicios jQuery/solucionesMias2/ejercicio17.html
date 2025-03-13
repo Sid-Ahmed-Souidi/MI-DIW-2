@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <h2>Formulario de Entrantes</h2>
+<form id="form-entrantes">
+  <label for="select-entrantes">Entrantes:</label>
+  <select id="select-entrantes">
+    <option value="none" selected>Selecciona entrante</option>
+    <option value="patatas">Patatas Fritas</option>
+    <option value="nuggets">Nuggets de Pollo</option>
+  </select><br><br>
+
+  <div id="salsas" style="display: none; padding: 0.5em; border: 1px solid #333"></div><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<br>
+
+<div id="error" style="color: red;"></div>
+<div id="resultado" style="color: green;"></div>
+    
+</body>
+
+
+<script>
+        $(document).ready(function(){
+
+            $("#select-entrantes").on("change" , function(){
+                let entrante = $("#select-entrantes").val();
+                if(entrante=="patatas"){
+                    $("#salsas").load("patatas.txt", function (response, status, xhr) {
+                      if (status === "success") {
+                      $("#salsas").hide().slideDown();
+                   } else {
+                     console.log("Error al cargar : ", xhr.statusText);
+                 }
+                 });
+
+
+                }else if(entrante=="nuggets"){
+                    $("#salsas").load("nuggets.txt", function (response, status, xhr) {
+                      if (status === "success") {
+                      $("#salsas").hide().slideDown();
+                   } else {
+                     console.log("Error al cargar : ", xhr.statusText);
+                     }
+                    });
+
+                }else{
+                    $("#salsas").empty()
+                    $("#salsas").hide()
+                }
+            })
+
+            $("#form-entrantes").on("submit", function(e){
+                e.preventDefault()
+                let entrante = $("#select-entrantes").val();
+
+                if(entrante!=="patatas" && entrante!=="nuggets"){
+                    $("#resultado").hide();
+                    $("#error").text("Error selecciona tipo de entrante")
+
+                }else{
+                            let contadorCheckeo = 0 ;
+                            $("input[name='salsa']").each(function(){
+                                    if($(this).is(":checked")){ 
+                                        $("#error").hide();
+                                        contadorCheckeo++;
+                                        $("#resultado").
+                                        text("Se ha seleccionado el entrante "+entrante+" y la salsa "+$(this).val())
+                                    }
+                            })
+                            if(contadorCheckeo===0){
+                                $("#resultado").hide();
+                                $("#error").text("Error selecciona salsa")
+
+                            }
+                }
+            })
+
+     // Ejercicio 17.3
+      // Agregamos marca de verificación al seleccionar un radiobutton 
+      // en este caso por que se añade dinamicamente  y se usa'input[type="radio"]'
+      $("#salsas").on('change', 'input[type="radio"]', function () {
+          // Quitamos la marca de verificación a todos los elementos 
+          //siblings sirve para los hermanos 
+          $('input[name="salsa"]').siblings('span').remove();
+
+          // Y se la ponemos al radiobutton seleccionado.
+          $(this).parent().append(
+            $("<span>")
+              .text('✓')
+              .css('color', 'green'));
+        });
+
+
+
+
+        })
+
+
+</script>
+
+
+
+</html>

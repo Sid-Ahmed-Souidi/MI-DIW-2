@@ -5,8 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="estilo18.css">
 </head>
 <body>
-    
+    <div id="res-container"></div>
+
 </body>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+          url: "https://dummyjson.com/products",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+                ul_principal = $('<ul>');
+                $(ul_principal).attr("id","product-list")
+                
+                let contador = 0;
+                $.each(data.products ,function(index , productos){
+                    contador++;
+
+                    li_titulo = $('<li>');
+                    $(li_titulo).addClass("product active")
+                    $(li_titulo).attr("data-product-id",contador)
+
+                    span1 = $('<span>');
+                    span2 = $('<span>');
+
+                    $(span1).append(productos.tags[0])
+                    $(span2).append(productos.tags[1])    
+
+                    $(li_titulo).append(productos.title)
+                    
+                    $(li_titulo).append(span1)
+                    $(li_titulo).append(span2)
+
+                    ul_interno = $('<ul>');
+                     $(ul_interno).addClass("reviews").css({"display":"block"})
+                     $.each(productos.reviews , function(index , opiniones){
+                        console.log(opiniones.comment)
+                        li_commentario = $('<li>');
+                        $(li_commentario).text(opiniones.rating+" "+opiniones.reviewerName+" : "+opiniones.comment) 
+                        $(ul_interno).append(li_commentario)
+
+                     })   
+
+
+                     $(li_titulo).append(ul_interno);
+                    $(ul_principal).append(li_titulo)
+                })
+                $('#res-container').append(ul_principal);
+
+            
+          },
+
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+          },
+          complete: function (xhr, status , data) {
+            console.log("La solicitud se ha completado");
+            console.log("Estado final:", status);
+
+          },
+        });        
+
+
+
+
+    })
+
+</script>
+
+
+
+
+
 </html>

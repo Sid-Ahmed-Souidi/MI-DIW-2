@@ -1,0 +1,24 @@
+/********** Estilos generales **********/
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    padding: 20px;
+    border: 1px solid #555;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+
+.container div {
+    
+  border: 1px solid black;
+
+}
+

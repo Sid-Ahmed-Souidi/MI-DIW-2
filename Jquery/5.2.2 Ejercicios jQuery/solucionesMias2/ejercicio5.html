@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <button id="my-button">Botón</button>
+    <input type="text" id="my-input" disabled>
+    
+</body>
+
+<script>
+    $(document).ready(function(){
+
+        $("#my-button").on("click" ,  function(){
+            if($("#my-input").prop("disabled")){
+              //  $("#my-input").attr("disabled", false);
+                $("#my-input").prop("disabled", false);
+            }else{
+                //$("#my-input").attr("disabled", true);
+                $("#my-input").prop("disabled", true);
+            }
+            
+
+
+        })
+
+
+    })
+
+</script>
+
+</html>

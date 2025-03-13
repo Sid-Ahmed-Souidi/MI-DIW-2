@@ -1,0 +1,59 @@
+
+* {
+    box-sizing: border-box;
+    /* Truco para visualizar capas anidadas */
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.cont-d{
+    background-color: gray
+}
+
+
+.cont-i{
+    background-color: green
+}
+
+
+.paisaje{
+    width: 100%;
+}
+
+.ima-homer{
+    width: 150px;
+    background-color: azure;
+    border-radius: 50%;
+}
+
+
+.nombre{
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: -18px;   
+    left: 10px; 
+
+}
+
+.cont-homer{
+    width: 160px;
+    position: relative;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+
+}
+

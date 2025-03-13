@@ -1,0 +1,96 @@
+
+* {
+    box-sizing: border-box;
+    /* Truco para visualizar capas anidadas */
+  }
+
+
+
+
+  header{
+    padding: 20px;
+    background-color: gray;
+    position: relative;
+
+  }
+  header img{
+    width: 40px;
+    position: absolute;
+  }
+
+  header h3{
+    margin-left: 45px;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  .contenedor-tabla{
+    background-color: pink;
+    padding: 40px;
+  }
+
+  .contenedor-tabla h3{
+    padding: 10px;
+  }
+
+
+  .contenedor-lista{
+    background-color: green;
+  }
+  
+  .contenedor-lista h3{
+    padding: 10px;
+     background-color: green;
+   }
+ 
+
+  .lista{
+    padding-left: 30px;
+  }
+
+  li:nth-child(odd){
+    color: blue;
+    font-size: 20px;
+
+  }
+  li:nth-child(even){
+    color: red;
+    font-size: 20px;
+
+  }
+
+  .tabla{
+    padding: 30px;
+    margin: 0 auto;
+    border: 4px dashed blue;
+}
+
+.tabla th{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+
+}
+
+
+
+
+footer{
+    background-color: gray;
+    padding: 20px
+
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+

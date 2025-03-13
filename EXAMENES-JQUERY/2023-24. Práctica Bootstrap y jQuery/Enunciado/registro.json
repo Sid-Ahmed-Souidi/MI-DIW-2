@@ -1,0 +1,4 @@
+{
+  "error": 3,
+  "mensaje_error": "Ya existe un usuario con esas credenciales."
+}

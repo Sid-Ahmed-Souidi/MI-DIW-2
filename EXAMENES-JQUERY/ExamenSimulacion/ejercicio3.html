@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - jQuery</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h1>Ejercicio 3: AJAX con jQuery</h1>
+
+    <button id="cargarUsuarios">Cargar Usuarios</button>
+    <ul id="listaUsuarios"></ul>
+
+</body>
+
+
+<script>
+
+    $(document).ready( function(){
+
+
+        $("#cargarUsuarios").on("click" , function(){
+            $("#cargarUsuarios").prop("disabled", true);
+        $.ajax({
+          url: "usuarios.json",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            $("#listaUsuarios").empty()
+            $(data).each(function(index , usuarios){
+                $("#listaUsuarios").append($('<li>').text("id :"+usuarios.id+" nombre :"+usuarios.nombre+" email :"+usuarios.email))
+
+            })
+            
+
+          },
+
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+            
+          },
+          complete: function (xhr, status) {
+            console.log("La solicitud se ha completado");
+            console.log("Estado final:", status);
+            $("#cargarUsuarios").prop("disabled", false);
+
+          },
+        });
+
+
+
+
+
+
+        })
+      
+            
+
+
+
+    })
+
+</script>
+
+
+
+</html>

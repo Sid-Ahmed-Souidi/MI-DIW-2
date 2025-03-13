@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+
+        <h1>Lista de Usuarios</h1>
+        <button id="cargar-usuarios">Cargar Usuarios</button>
+
+        <ul id="lista-usuarios"></ul>
+
+
+
+    
+</body>
+
+        <script>
+        $(document).ready(function(){            
+        $.ajax({
+          url: "usuarios.json",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+
+        $(data).each(function(index , usuarios){
+
+            $("#cargar-usuarios").on("click" , function(){
+                $("#lista-usuarios").append($('<li>').text("id :"+usuarios.id+"nombre :"+usuarios.nombre+"email :"+usuarios.email))
+            })
+
+
+        })
+
+          },
+
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+            
+          },
+          complete: function (xhr, status) {
+            console.log("La solicitud se ha completado");
+            console.log("Estado final:", status);
+          },
+        });
+                })
+
+
+        </script>
+
+
+
+</html>

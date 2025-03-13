@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .completada {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea">
+    <button id="agregar-tarea">Agregar Tarea</button>
+    <ul id="lista-tareas"></ul>
+    <button id="eliminar-completados">Eliminar Completados</button>
+</body>
+
+
+<script>
+
+    $(document).ready(function(){
+        $("#agregar-tarea").on("click" , function(){
+            if($("#nueva-tarea").val()===""){
+                $(".error").remove()
+                $("#eliminar-completados").before($('<p>').text("Inserte tarea").css("color","red").addClass("error"))
+
+            }
+            else{
+                $("#lista-tareas").append($('<li>').text($("#nueva-tarea").val()))
+            }
+
+        })
+
+        $("#lista-tareas").on("click" , "li" , function(){            
+            if(!$(this).hasClass("completada")){
+                $(this).addClass("completada");
+
+            }
+        })
+
+        $("#eliminar-completados").on("click" , function(){
+
+                $("#lista-tareas li").each(function(){
+                    if($(this).hasClass("completada")){
+                            $(this).remove();
+                    }
+                })
+
+
+        })
+
+
+
+
+    })
+
+
+</script>
+
+</html>
+
+
+
+
