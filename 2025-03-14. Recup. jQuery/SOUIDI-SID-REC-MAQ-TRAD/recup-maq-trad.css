@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+  /* Truco para visualizar capas anidadas */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+:root {
+  --menu-color: red;
+  --font-size: 16px;
+  --noticias-color: yellow;
+  --notificacion-color: #ff4444;
+}
+
+.menu-lateral {
+  background-color: #333;
+  padding: 20px;
+  background-color: var(--menu-color);
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+
+.notificacion {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--notificacion-color);
+  border-radius: 5px;
+}
+
+.noticias {
+  background-color: var(--noticias-color);
+  padding: 15px;
+}
+
+.noticia {
+  background-color: white;
+  padding: 10px;
+  margin: 4px;
+}

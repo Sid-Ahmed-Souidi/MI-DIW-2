@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2025-03-14. Recup. jQuery. Ej. 2</title>
+  <link rel="stylesheet" href="css/estilos-generales.css">
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <style>
+    #texto {
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-top: 10px;
+      min-height: 50px;
+      border-radius: 5px;
+    }
+
+    #texto p {
+      margin: 0;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>2025-03-14. Recup. jQuery. Ejercicio 2</h1>
+
+    <h3>Consigue con jQuery los siguientes comportamientos: [4 puntos]</h3>
+
+    <p><strong>2.1.</strong> Cuando se cargue la página, se cargará dinámicamente el archivo <code>texto.html</code> dentro de <code>div#texto</code>. Si la llamada falla, se cargará en ese mismo <code>div</code> un mensaje de error. <strong>[2 puntos]</strong></p>
+
+    <p><strong>2.2.</strong> Si la llamada ha sido satisfactoria, se deben poner de color rojo todos los links cuyo <code>href</code> apunte a una página del dominio "https://educarex.es". <strong>[1 punto]</strong></p>
+
+    <p><strong>2.3.</strong> Consigue que el <code>div#texto</code> esté oculto al cargar la página y se muestre con un efecto slide cuando la llamada ajax se haya completado, satisfactoriamente o no. <strong>[1 punto]</strong></p>
+
+    <div id="texto"></div>
+
+  </div>
+
+  <script>
+    // Inserta aquí tu código jQuery
+    $(document).ready(function(){
+      $("#texto").hide().slideDown(1000);
+
+      $("#texto").load("texto.txt", function (response, status, xhr) {
+                  if (status === "success") {
+                        console.log("carga completa")
+                   } else {
+                     console.log("Error al cargar : ", xhr.statusText);
+                     $("#texto").text("Error al cargar el archivo texto.txt")
+                 }
+                 });
+    })
+
+
+
+
+    $('#texto a').each(function(){
+    
+                if($(this).attr("href")==="https://educarex.es"){
+                      $(this).css("color","red");
+                }
+
+              })
+
+
+
+  </script>
+
+      
+
+
+
+</body>
+
+</html>
